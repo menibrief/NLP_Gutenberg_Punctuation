@@ -32,7 +32,7 @@ The code can be ran from a CLI using the following:<br>
 ```
 Arguments: <br>
 ```
-  -h, --help:            show this help message and exit 
+  -h, --help: show this help message and exit 
   -Action, -a {train,evaluate,inference}:  The desired action. Note that train will run evaluation as well 
   -config :  configuration file *.y(a)ml 
   -download_data, -d {y,yes,n,no}:  Whether to download the dataset from gutenberg. Will default to yes if book_data_path is not provided and previous data not found 
