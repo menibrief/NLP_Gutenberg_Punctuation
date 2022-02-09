@@ -24,8 +24,10 @@ parser.add_argument('-download_data','-d',choices=['y','yes','n','no'], default=
                     help='Whether to download the dataset from gutenberg. Will default to yes'
                          'if book_data_path is not provided and previous data not found')
 parser.add_argument('-book_data_path','-b',help='Path to location for saving/loading book data csv file.')
+parser.add_argument('-experiment_name','-e',help='Name for saving resulting model + log, '
+                    'only relevant if train selected', default='fine_tuned_bert')
 parser.add_argument('-train_config','-tc',help="Dictionary in the format {'batch_size':int,"
-                                        "'num_epochs':int,'seq_len':int'}, only relevant if train "
+                                               "'num_epochs':int,'seq_len':int'}, only relevant if train "
                                         "selected. Default: 30,25,150",default=configs)
 parser.add_argument('-model_path','-m',help='Path to model. Must be provided if evaluate or '
                                             'inference selected')
@@ -55,7 +57,8 @@ if __name__ == "__main__":
         train,val,test = create_gutenberg_dataset(args['book_data_path'],download=args['download_data'],
                                                   save_df=True,seq_len=args['train_config']['seq_len'])
         model = PunctuationModel
-        trainer = Trainer(PunctuationModel,train,val,test,**args['train_config'],device=device)
+        trainer = Trainer(PunctuationModel,train,val,test,args['experiment_name'],**args['train_config'],
+                          device=device)
         trainer.train()
         predictor = Predict(trainer.model,test,device=device)
         predictor.evaluate()
