@@ -164,7 +164,7 @@ class Predict:
         n_words = len(result)
         for i in range(n_words):
             word = result[i]
-            if not word:
+            if not word or word == 'None':
                 continue
             if word == '<br>':
                 word = "\n\n"
@@ -178,3 +178,5 @@ class Predict:
                     print(word, file=f, end=add_space)
             else:
                 print(word, end=add_space)
+        print('\n')
+        
