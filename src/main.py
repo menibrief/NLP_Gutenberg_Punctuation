@@ -19,7 +19,7 @@ parser = argparse.ArgumentParser(description='Train a new  model on the original
                                              ' file.')
 parser.add_argument('-Action','-a',choices=['train','evaluate','inference'],default='train',
                     help='Desired action. Note that train will run evaluation as well')
-parser.add_argument('-config', help="configuration file *.yml", default=None)
+parser.add_argument('-config', help="configuration file *.y(a)ml", default=None)
 parser.add_argument('-download_data','-d',choices=['y','yes','n','no'], default='no',
                     help='Whether to download the dataset from gutenberg. Will default to yes'
                          'if book_data_path is not provided and previous data not found')
