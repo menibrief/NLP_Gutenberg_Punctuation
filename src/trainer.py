@@ -6,7 +6,7 @@ from torch.optim.lr_scheduler import ExponentialLR
 
 
 class Trainer:
-    def __init__(self, model_class, train, val, test, experiment_name='fine_tuned_bert', loss_fn=NLLLoss,
+    def __init__(self, model_class, train, val, test, experiment_name, loss_fn=NLLLoss,
                  optimizer=Adam,batch_size=16, num_epochs=25, seq_len=150, device=False):
         self.batch_size = batch_size
         self.num_epochs = num_epochs
