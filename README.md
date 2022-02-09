@@ -8,7 +8,7 @@ optional arguments: <br>
   -h, --help:            show this help message and exit <br>
   -Action {train,evaluate,inference}, -a {train,evaluate,inference}:
                         Desired action. Note that train will run evaluation as well <br>
-  -config CONFIG:        configuration file *.yml <br>
+  -config CONFIG:        configuration file *.y(a)ml <br>
   -download_data {y,yes,n,no}, -d {y,yes,n,no}:
                         Whether to download the dataset from gutenberg. Will default to yes if book_data_path is
                         not provided and previous data not found <br>
