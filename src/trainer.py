@@ -37,7 +37,7 @@ class Trainer:
                             format='%(asctime)s - %(message)s')
         print(self.model)
 
-    def train(self,scheduler=ExponentialLR, scheduler_steps=3,patience=10,print_step=400):
+    def train(self,scheduler=ExponentialLR, scheduler_steps=15,patience=10,print_step=400):
         parameters1 = self.model.bert.parameters()
         parameters2 = [*self.model.before.parameters(), *self.model.after.parameters(), *self.model.capital.parameters(),
                        *self.model.br.parameters()]
