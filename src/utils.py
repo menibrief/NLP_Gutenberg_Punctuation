@@ -5,7 +5,7 @@ import pandas as pd
 import transformers
 import re
 import matplotlib.pyplot as plt
-from transformers import DistilBertTokenizer, DistilBertModel, BertTokenizer, BertModel
+from transformers import DistilBertTokenizer, DistilBertModel
 from transformers import logging as t_log
 from sklearn.metrics import f1_score
 import logging
@@ -20,7 +20,7 @@ device = torch.cuda.is_available()
 punc = ['!', '"', "'", '(', ')', ',', '-', '.', ':', ';', '?', 'None']
 annotations_embedding = {punc[i]: i for i in range(len(punc))}
 reverse_annotations_embedding = {val: key for key, val in annotations_embedding.items()}
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
 
 
 class SentenceDataSet(torch.utils.data.Dataset):

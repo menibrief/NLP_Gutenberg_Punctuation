@@ -60,7 +60,7 @@ if __name__ == "__main__":
         trainer = Trainer(PunctuationModel,train,val,test,args['experiment_name'],**args['train_config'],
                           device=device)
         trainer.train()
-        predictor = Predict(trainer.model,test,device=device,log=True)
+        predictor = Predict(trainer.model,test,device=device)
         predictor.evaluate()
 
     elif args['Action'] == 'evaluate':
