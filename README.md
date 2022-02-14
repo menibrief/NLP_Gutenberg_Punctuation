@@ -43,4 +43,4 @@ Arguments: <br>
   -text, -t:   Path to a text file for inference or evaluation. Note that evaluation will be meaningless for text that is not fully punctuated. Must be provided if inference selected 
   -output, -o: Path to output annotated text, if not provided will use stdout 
  ```
-The trained model will be saved under a new directory named "models/", including all saved models, with "models/logs/" containing the relevant log for the experiment.
+The trained model will be saved under a new directory named "models/", the includes all saved models, and a directory "models/logs/" that contains the relevant log for the experiment.

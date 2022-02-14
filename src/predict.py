@@ -178,5 +178,7 @@ class Predict:
                     print(word, file=f, end=add_space)
             else:
                 print(word, end=add_space)
+        if result[-1] not in ['.', '<br>']:
+            print('.')
         print('\n')
         
