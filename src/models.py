@@ -8,7 +8,7 @@ class PunctuationModel(torch.nn.Module):
         :param sample: a sample batch, to find bert output size
         """
         super().__init__()
-        self.bert = DistilBertModel.from_pretrained("distilbert-base-uncased")
+        self.bert = BertModel.from_pretrained("bert-base-uncased")
         embedding_dim = self.get_bert_output_size(sample)
         self.before = torch.nn.Sequential(
             torch.nn.Linear(embedding_dim, 100),
